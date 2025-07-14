@@ -32,6 +32,13 @@ pipeline {
                 }
             }
         }
+        stage('Push Docker Image') {
+            steps {
+                script {
+                    sh "docker push ${IMAGE_NAME}:${IMAGE_TAG}"
+                }
+            }
+        }
 
         stage('Run Container') {
             steps {
