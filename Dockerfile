@@ -26,6 +26,6 @@ COPY --from=builder /app /app
 WORKDIR /app
 
 EXPOSE 80
-
+LABEL org.opencontainers.image.source https://github.com/OWNER/REPO
 # ---- Launch Node (port 8080) and Nginx (port 80) ----
 CMD ["sh", "-c", "node server.js & nginx -g 'daemon off;'"]
