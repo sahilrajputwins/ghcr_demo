@@ -3,7 +3,8 @@ pipeline {
 
     environment {
         IMAGE_NAME = "ghcr.io/sahilrajputwins/testghcr"
-        IMAGE_TAG = "latest"
+        IMAGE_NAME_REPO = "ghcr.io/sahilrajputwins/ghcr_demo/testghcr"
+        IMAGE_TAG = "${BUILD_NUMBER}"
         CONTAINER_NAME = "testghcr_container"
     }
 
@@ -20,6 +21,7 @@ pipeline {
                     sh """
                     export DOCKER_BUILDKIT=0
                     docker build -t ${IMAGE_NAME}:${IMAGE_TAG} .
+                    docker build -t ${IMAGE_NAME_REPO}:${IMAGE_TAG} .
                     """
                 }
             }
