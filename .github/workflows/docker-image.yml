@@ -56,6 +56,6 @@ jobs:
             docker pull ghcr.io/sahilrajputwins/ghcr_demo:latest &&
             docker stop testghcr || true &&
             docker rm testghcr || true &&
-            docker run -d --name testghcr -p 80:80 ghcr.io/sahilrajputwins/ghcr_demo:latest
+            docker run -d --name testghcr -p 8080:80 ghcr.io/sahilrajputwins/ghcr_demo:latest
           "
 
